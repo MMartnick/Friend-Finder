@@ -150,10 +150,8 @@
     $(".modal").modal();
     $('select').formSelect()
     $('.materialboxed').materialbox();
-
     $("#submit").on("click", function (event) {
       event.preventDefault();
-      console.log("clicked");
       var userData = {
         name: $("#name").val().trim(),
         photo: $("#photo").val().trim(),
@@ -173,8 +171,6 @@
       console.log(userData);
       alert("Your survey has be saved");
       $.post("/data/friends", userData, function (data) {
-
-        console.log("POSTED");
       });
       $("#name").val("");
       $("#photo").val("");
@@ -188,14 +184,10 @@
       $("#q8").val("");
       $("#q9").val("");
       $("#q10").val("");
-
-
       $.post("/data/friends", userData, function (data) {
         $("#match-name").text(data.name);
         $("#match-image").attr("src", data.photo);
-
       });
-
     });
   </script>
 

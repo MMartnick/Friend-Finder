@@ -14,6 +14,11 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// Links CSS
+// =============================================================
+app.use(express.static(__dirname + '/public'));
+
+
 // Sets up the routing
 // =============================================================
 require("./routing/apiRoutes")(app);
